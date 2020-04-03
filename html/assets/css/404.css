@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/**
+ * SuperGradient
+ * SASS MULTI-COLOR GRADIENT MIXIN (LINEAR & RADIAL)
+ * Options
+ * $type: linear*, radial
+ * $from: top*, left, top left, top right, bottom right, bottom left, center (radial)
+ * $colors: hex, rgba
+ * *default
+ *
+ * Include: bower install super-gradient
+ *
+ * Demo: http://super-gradient.ib.gs/
+ */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: #fff; }
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.2); }
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 0;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2); }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Robot, "Droid Sans", sans-serif;
+  font-size: 14px; }
+  @media (min-width: 768px) {
+    body {
+      overflow: hidden; } }
+/*# sourceMappingURL=maps/404.css.map */

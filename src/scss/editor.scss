@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+/**
+ * Default Setting
+ */
+@import "app/mixin";
+
+// Variables Setting
+@import "app/variables";
+
+/**
+ * Extend
+ */
+@import "app/editor";
+
+body#tinymce {
+	margin: 8px 15px;
+	box-sizing: border-box;
+	@extend %editor;
+}

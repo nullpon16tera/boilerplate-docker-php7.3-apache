@@ -1,0 +1,50 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: '12345'
+
+  php:
+    # image: nullpon/myphp:7.1.28-apache
+    image: nullpon/myphp:7.3-apache
+    # build: .
+    depends_on:
+      - db
+    links:
+      - db
+    volumes:
+      - ./html:/var/www/html
+    restart: always
+    environment:
+      VIRTUAL_HOST: ${VIRTUAL_NAME},www.${VIRTUAL_NAME}
+      # CERT_NAME: ${VIRTUAL_NAME}
+      # HTTPS_METHOD: noredirect
+    env_file: .env
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      VIRTUAL_HOST: phpmyadmin.${VIRTUAL_NAME}
+    volumes:
+      - phpmyadmin_session:/sessions
+    env_file: .env
+
+volumes:
+  db:
+  phpmyadmin_session:
+
+networks:
+  default:
+    external:
+      name: shared

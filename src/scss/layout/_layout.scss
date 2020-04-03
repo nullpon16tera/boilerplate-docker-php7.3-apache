@@ -1,0 +1,59 @@
+/**
+ * Layout
+ * レイアウト全般に関するものはここに書く
+ */
+body {
+	display: flex;
+  flex-direction: column;
+}
+.layout-wrapper {
+  display: flex;
+	flex-direction: column;
+  min-height: 100vh;
+  // padding-top: 60px;
+	background-color: $bg-color-layout-wrapper;
+
+	// @media (min-width: $sm-min) {
+	// 	padding-top: 88px;
+	// }
+
+  // @media (min-width: $lg-min) {
+  //   // padding-top: 98px;
+	// }
+
+	// @media (min-width: $nav-min) {
+	// 	padding-top: 116px;
+	// }
+}
+.layout-main {
+  flex: 1 0 auto;
+}
+
+// Container
+.container {
+	max-width: 420px + $gatter;
+	margin-left: auto;
+	margin-right: auto;
+	@include safe-left($gatter-size);
+	@include safe-right($gatter-size);
+
+	@media (min-width: $sm-min) {
+		max-width: 520px + $gatter;
+	}
+
+	@media (min-width: $md-min) {
+		max-width: 680px + $gatter;
+	}
+
+	@media (min-width: $lg-min) {
+		max-width: 880px + $gatter;
+	}
+	@media (min-width: $xl-min) {
+		max-width: 1124px + $gatter;
+	}
+}
+
+.row {
+	margin-left: -$gatter-size;
+	margin-right: -$gatter-size;
+}
